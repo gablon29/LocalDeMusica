@@ -14,4 +14,5 @@ con la utilizacion en proyectos reales</p>
 <li>Tipo</li>
 </ol>
 
+<p>Creamos la logica para poder devolver por consola este resultado, una lista de sucursales con sus instrumentos correspondientes.</p>
 <img src="./image/img.png">
