@@ -4,3 +4,14 @@
 <h2>Objetivo</h2>
 <p>Mejorar ejercitando el manejo de la coleccion de ArrayList
 con la utilizacion en proyectos reales</p>
+
+<h3>Clases</h3>
+<p>Generemos cuatro clases</p>
+<ol>
+<li>Fabrica</li>
+<li>Sucursales</li>
+<li>Instrumentos</li>
+<li>Tipo</li>
+</ol>
+
+<img src="./image/img.png">
