@@ -23,4 +23,14 @@ public class Sucursal {
             System.out.println(instrumento);
         }
     }
+
+    public ArrayList<Instrumento> intrumentosPorTipo(Tipo tipo) {
+        ArrayList<Instrumento> seleccionados= new ArrayList<>();
+        for (Instrumento instrumento: instrumentos) {
+            if(instrumento.getTipo() == tipo) {
+                seleccionados.add(instrumento);
+            }
+        }
+        return seleccionados;
+    }
 }
