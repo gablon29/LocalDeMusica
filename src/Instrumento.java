@@ -17,4 +17,16 @@ public class Instrumento {
                 ", tipo=" + tipo +
                 '}';
     }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
+    }
 }
