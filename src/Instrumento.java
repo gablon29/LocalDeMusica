@@ -29,4 +29,8 @@ public class Instrumento {
     public void setTipo(Tipo tipo) {
         this.tipo = tipo;
     }
+
+    public Tipo getTipo() {
+        return tipo;
+    }
 }

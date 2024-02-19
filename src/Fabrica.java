@@ -18,5 +18,11 @@ public class Fabrica {
             sucursal.listaDeIntrumentos();
         }
     }
-
+    public ArrayList<Instrumento> listaInstrumentosPorTipo(Tipo tipo) {
+        ArrayList<Instrumento> instrumentosSeleccionados = new ArrayList<>();
+        for (Sucursal sucursal: sucursals) {
+            instrumentosSeleccionados.addAll( sucursal.intrumentosPorTipo(tipo));
+        }
+        return instrumentosSeleccionados;
+    }
 }
