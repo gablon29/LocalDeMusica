@@ -9,6 +9,10 @@ public class Instrumento {
         this.tipo = tipo;
     }
 
+    public String getID() {
+        return ID;
+    }
+
     @Override
     public String toString() {
         return "Instrumento{" +
