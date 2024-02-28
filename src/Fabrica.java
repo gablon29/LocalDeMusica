@@ -25,4 +25,13 @@ public class Fabrica {
         }
         return instrumentosSeleccionados;
     }
+    public Instrumento borradoDeInstrumento(String ID) {
+        Instrumento instBorrado = null;
+        int i = 0;
+        while(i < sucursals.size() && instBorrado == null) {
+            instBorrado = sucursals.get(i).borrarInstrumento(ID);
+            i++;
+        }
+        return instBorrado;
+    }
 }

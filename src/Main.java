@@ -8,11 +8,11 @@ public class Main {
     public static void main(String[] args) {
         Fabrica f = new Fabrica();
         cargarFabrica(f);
-        ArrayList<Instrumento> lista = f.listaInstrumentosPorTipo(Tipo.CUERDA);
-        for (Instrumento instrumento: lista
-             ) {
-            System.out.println(instrumento);
-        }
+        f.listarSucursales();
+        Instrumento instrumeBorrado = f.borradoDeInstrumento("p1213");
+        System.out.println("Instrumento Borrado: " + instrumeBorrado);
+        System.out.println("Ahora sin el instrumento borrado");
+        f.listarSucursales();
     }
 
     private static void cargarFabrica(Fabrica f){

@@ -9,13 +9,22 @@ public class Sucursal {
         this.nombre = nombre;
     }
 
-    public Instrumento encontrarInstrumento(String ID) {
+    public Instrumento borrarInstrumento(String ID) {
+        Instrumento instrumentoABorrar = this.encontrarInstrumento(ID);
+        this.instrumentos.remove(instrumentoABorrar);
+        return instrumentoABorrar;
+    }
+
+    private Instrumento encontrarInstrumento(String ID) {
         int i = 0;
+        Instrumento instrumentoEncontrado = null;
         while (i < instrumentos.size() && !this.instrumentos.get(i).getID().equals(ID)) {
-            // comparar si el id es el mismo.
-            if ()
+            i++;
         }
-        return null;
+        if (i < instrumentos.size()) {
+            instrumentoEncontrado = this.instrumentos.get(i);
+        }
+        return instrumentoEncontrado;
     }
 
     public void agregarInstrumento (Instrumento instrumento) {
