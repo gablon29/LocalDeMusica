@@ -15,6 +15,22 @@ public class Sucursal {
         return instrumentoABorrar;
     }
 
+    public double[] porcIntrumento() {
+        final  int CANT_INSTRUMENTOS = Tipo.values().length;
+        double[] porcentajes = new double[CANT_INSTRUMENTOS];
+        for (Instrumento instrumento: instrumentos) {
+            porcentajes[instrumento.getTipo().ordinal()]++;
+        }
+        convertirAPorcentajes(porcentajes);
+        return porcentajes;
+    }
+
+    private void convertirAPorcentajes(double[] porcentajes) {
+        for (int i = 0; i < porcentajes.length; i++) {
+            porcentajes[i] = (porcentajes[i] * 100) / instrumentos.size();
+        }
+    }
+
     private Instrumento encontrarInstrumento(String ID) {
         int i = 0;
         Instrumento instrumentoEncontrado = null;

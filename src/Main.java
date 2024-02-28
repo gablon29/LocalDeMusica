@@ -8,11 +8,10 @@ public class Main {
     public static void main(String[] args) {
         Fabrica f = new Fabrica();
         cargarFabrica(f);
-        f.listarSucursales();
-        Instrumento instrumeBorrado = f.borradoDeInstrumento("p1213");
-        System.out.println("Instrumento Borrado: " + instrumeBorrado);
-        System.out.println("Ahora sin el instrumento borrado");
-        f.listarSucursales();
+        double[] porc = f.porcIntrumentos("Lavalle");
+        for (int i = 0; i < porc.length; i++) {
+            System.out.println(porc[i]);
+        }
     }
 
     private static void cargarFabrica(Fabrica f){
@@ -20,6 +19,7 @@ public class Main {
         Sucursal lavalle = new Sucursal("Lavalle");
         blasparera.agregarInstrumento(new Instrumento("p1213", "flauta", Tipo.CUERDA));
         blasparera.agregarInstrumento(new Instrumento("p456", "piano", Tipo.PERCUSION));
+        blasparera.agregarInstrumento(new Instrumento("B455", "Arpa", Tipo.PERCUSION));
         lavalle.agregarInstrumento(new Instrumento("L123", "Guitarra", Tipo.CUERDA));
         lavalle.agregarInstrumento(new Instrumento("L456", "trompeta", Tipo.VIENTO));
         f.agregarSucursal(blasparera);
