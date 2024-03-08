@@ -21,4 +21,7 @@ public class StudentRecord {
     public void isStudentInRecord(String alumno){
         System.out.println(listaAlumnos.containsKey(alumno));
     }
+    public void nuevoLista(){
+        System.out.println(listaAlumnos.toString());
+    }
 }
