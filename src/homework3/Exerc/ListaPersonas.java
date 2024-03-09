@@ -14,17 +14,32 @@ public class ListaPersonas {
     public void agregarPersonas(Persona persona){
         this.lista.add(persona);
     }
+
+    // generamos una lista solo con los nombres
     public List<String> listarNombres() {
-        List<String> names = lista.stream()
+        return lista.stream()
                 .map(persona -> persona.nombre)
                 .collect(Collectors.toList());
-        return names;
     }
+
+    // filtramos por hobby
     public List<Persona> filtrarPorHobby(String hobby) {
-        List<Persona> names = lista.stream()
-                .filter(persona -> persona.hobby.equals(hobby))
+        return lista.stream().filter(persona -> persona.hobby.equals(hobby))
                 .collect(Collectors.toList());
-        return names;
+    }
+
+
+    // generamos un nueva lista limitando elementos
+    public List<Persona> filtroPorCantidad(int num) {
+        return lista.stream()
+                .limit(num)
+                .collect(Collectors.toList());
+    }
+    public void printPersonas() {
+        for (Persona persona: this.lista
+             ) {
+            System.out.println(persona);
+        }
     }
 }
 
