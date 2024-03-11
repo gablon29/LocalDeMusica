@@ -29,4 +29,11 @@ public class PartyGuestList {
             System.out.println(invitado);
         }
     }
+
+    @Override
+    public String toString() {
+        return "PartyGuestList{" +
+                "listInvitados=" + listInvitados +
+                '}';
+    }
 }
