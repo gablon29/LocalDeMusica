@@ -10,10 +10,10 @@ public class Print {
             System.out.println(persona);
         }
     }
-    public static <T> void impriElementos(Collection<? extends T> lista){
-        for (T t: lista
+    public static <T> void impriElementos(List<? extends T> lista){
+        for (T elemento: lista
              ) {
-            System.out.println((T) t);
+            System.out.println(elemento);
         }
     }
 }

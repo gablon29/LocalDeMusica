@@ -3,7 +3,7 @@ package homework4.Exercise;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListaDePersonas<T extends Persona>{
+public class ListaDePersonas<T>{
 
     private List<T> listaPersonas;
 
@@ -13,6 +13,10 @@ public class ListaDePersonas<T extends Persona>{
 
     public void agregarALista(T tipo) {
         listaPersonas.add(tipo);
+    }
+
+    public List<T> getListaPersonas(){
+        return listaPersonas;
     }
     public void printList() {
         for (T t: listaPersonas

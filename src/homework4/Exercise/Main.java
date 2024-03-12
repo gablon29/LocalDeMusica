@@ -13,6 +13,9 @@ public class Main {
         lP.add(lucas);
         lP.add(florencia);
         Print.printList(lP);
+        ListaDePersonas<Persona> l = new ListaDePersonas<>();
+        l.agregarALista(florencia);
+        Print.impriElementos(l.getListaPersonas());
     }
 
 }
