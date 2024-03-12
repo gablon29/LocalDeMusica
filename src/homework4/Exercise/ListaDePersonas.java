@@ -3,7 +3,7 @@ package homework4.Exercise;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListaDePersonas<T>{
+public class ListaDePersonas<T extends Persona>{
 
     private List<T> listaPersonas;
 

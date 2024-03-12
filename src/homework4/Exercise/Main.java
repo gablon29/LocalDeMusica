@@ -9,10 +9,10 @@ public class Main {
         Deportista florencia = new Deportista("florencia", "Pacheco", 100);
         Persona lucas = new Persona("lucas", "londero");
         Persona gian = new Persona("gian", "londero");
-        ListaDePersonas<Persona> listaDePersonas = new ListaDePersonas<>();
-        listaDePersonas.agregarALista(lucas);
-        listaDePersonas.printList();
-        gabriel.saludar();
+        List<Persona> lP = new ArrayList<>();
+        lP.add(lucas);
+        lP.add(florencia);
+        Print.printList(lP);
     }
 
 }
