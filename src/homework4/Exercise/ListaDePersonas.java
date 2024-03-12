@@ -14,6 +14,10 @@ public class ListaDePersonas<T>{
     public void agregarALista(T tipo) {
         listaPersonas.add(tipo);
     }
+
+    public List<T> getListaPersonas(){
+        return listaPersonas;
+    }
     public void printList() {
         for (T t: listaPersonas
              ) {
