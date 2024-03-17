@@ -1,24 +1,26 @@
 package homework3.Exerc;
 
-import java.security.spec.RSAOtherPrimeInfo;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) {
-        ListaPersonas listaPersonas = new ListaPersonas();
-
-        listaPersonas.agregarPersonas(new Persona("gabriel", "29", "programar", TipoPersona.PROGRAMADOR));
-        listaPersonas.agregarPersonas(new Persona("Ivan", "28", "entrenar", TipoPersona.ENTRENADOR));
-        listaPersonas.agregarPersonas(new Persona("Florencia", "27", "programar", TipoPersona.PROGRAMADOR));
-        listaPersonas.agregarPersonas(new Persona("lucas", "23", "trabajar", TipoPersona.PROGRAMADOR));
-
-        List<Persona> personas = listaPersonas.filtroPorCantidad(2);
-        personas.forEach(persona -> System.out.println(persona.nombre));
-        List<String> nombres = listaPersonas.listarNombres();
-        nombres.forEach(System.out::println);
-        System.out.println(" ");
-        listaPersonas.printPersonas();
+        // establecemos conexion
+        String url = "jdbc:h2:~/test";
+        String username = "sa";
+        String password = "";
+        try {
+            Connection connection = DriverManager.getConnection(url, username,password);
+            Statement statement = connection.createStatement();
+            String createTable = "CREATE TABLE IF NOT EXISTS amigos_gabriel (id INT PRIMARY KEY AUTO_INCREMENT, nombre VARCHAR(50))";
+            statement.executeUpdate(createTable);
+            String insertRegistro = "INSERT INTO amigos_gabriel VALUES ('gabriel'), ('lucas')";
+            statement.executeUpdate(insertRegistro);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         }
 
     }

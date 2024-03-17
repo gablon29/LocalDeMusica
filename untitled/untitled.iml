@@ -8,13 +8,15 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://C:/Program Files (x86)/H2/bin/h2-2.2.224.jar!/" />
-        </CLASSES>
+      <library name="vvvv">
+        <CLASSES />
         <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/src" />
+        </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="library" name="dddd" level="project" />
+    <orderEntry type="library" name="LocalDeMusica" level="project" />
   </component>
 </module>

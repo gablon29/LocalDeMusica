@@ -1,28 +1,29 @@
-import javax.annotation.processing.SupportedSourceVersion;
-import java.awt.font.FontRenderContext;
-import java.util.ArrayList;
+import org.h2.Driver;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
-public class Main {
-    public static void main(String[] args) {
-        Fabrica f = new Fabrica();
-        cargarFabrica(f);
-        double[] porc = f.porcIntrumentos("Lavalle");
-        for (int i = 0; i < porc.length; i++) {
-            System.out.println(porc[i]);
+
+        public class Main {
+            public static void main(String[] args) {
+                // establecemos conexion
+                String url = "jdbc:h2:~/personas";
+                String username = "sa";
+                String password = "";
+                String Drive_DB = "org.h2.Driver";
+                try {
+                    Class.forName(Drive_DB);
+                    Connection connection = DriverManager.getConnection(url, username,password);
+                    Statement statement = connection.createStatement();
+                    String insertNewRegister = "";
+                    statement.executeUpdate(insertNewRegister);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
         }
-    }
 
-    private static void cargarFabrica(Fabrica f){
-        Sucursal blasparera = new Sucursal("blasparera");
-        Sucursal lavalle = new Sucursal("Lavalle");
-        blasparera.agregarInstrumento(new Instrumento("p1213", "flauta", Tipo.CUERDA));
-        blasparera.agregarInstrumento(new Instrumento("p456", "piano", Tipo.PERCUSION));
-        blasparera.agregarInstrumento(new Instrumento("B455", "Arpa", Tipo.PERCUSION));
-        lavalle.agregarInstrumento(new Instrumento("L123", "Guitarra", Tipo.CUERDA));
-        lavalle.agregarInstrumento(new Instrumento("L456", "trompeta", Tipo.VIENTO));
-        f.agregarSucursal(blasparera);
-        f.agregarSucursal(lavalle);
-}
-}
