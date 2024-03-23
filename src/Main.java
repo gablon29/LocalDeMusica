@@ -1,4 +1,4 @@
-import org.h2.Driver;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -16,7 +16,7 @@ import java.sql.Statement;
                     Class.forName(Drive_DB);
                     Connection connection = DriverManager.getConnection(url, username,password);
                     Statement statement = connection.createStatement();
-                    String insertNewRegister = "";
+                    String insertNewRegister = "CREATE TABLE personas.amigos (id INT, name VARCHAR(50))";
                     statement.executeUpdate(insertNewRegister);
                 } catch (SQLException e) {
                     e.printStackTrace();
