@@ -1,11 +1,8 @@
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 
-        public class Main {
+public class Main {
             public static void main(String[] args) {
                 // establecemos conexion
                 String url = "jdbc:h2:~/personas";
@@ -14,14 +11,20 @@ import java.sql.Statement;
                 String Drive_DB = "org.h2.Driver";
                 try {
                     Class.forName(Drive_DB);
-                    Connection connection = DriverManager.getConnection(url, username,password);
-                    Statement statement = connection.createStatement();
-                    String insertNewRegister = "CREATE TABLE personas.amigos (id INT, name VARCHAR(50))";
-                    statement.executeUpdate(insertNewRegister);
-                } catch (SQLException e) {
-                    e.printStackTrace();
+                    Connection connection = DriverManager.getConnection(url, username, password);
+                    String insertRegister = "INSERT INTO personas.amigos (id, name) " +
+                            "VALUES(?, ?)";
+                    PreparedStatement preparedStatement = connection.prepareStatement(insertRegister);
+                    preparedStatement.setInt(1, 1);
+                    preparedStatement.setString(2, "Gabriel Londero");
+                    int rowsInsert = preparedStatement.executeUpdate();
+                    System.out.println("filas insertadas: " + rowsInsert);
+                    preparedStatement.close();
+                    connection.close();
                 } catch (ClassNotFoundException e) {
                     throw new RuntimeException(e);
+                } catch (SQLException e) {
+                    e.printStackTrace();
                 }
             }
 
