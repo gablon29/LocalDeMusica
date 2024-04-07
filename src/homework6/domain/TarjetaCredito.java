@@ -25,4 +25,12 @@ public class TarjetaCredito {
     public void setTitular(String titular) {
         this.titular = titular;
     }
+
+    @Override
+    public String toString() {
+        return "TarjetaCredito{" +
+                "number='" + number + '\'' +
+                ", titular='" + titular + '\'' +
+                '}';
+    }
 }

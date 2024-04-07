@@ -8,6 +8,9 @@ import java.util.List;
 public class TarjetaCreditoDaoImp implements TarjetaCreditoDao {
     @Override
     public TarjetaCredito getTarjetaDeCreditoById(int id) {
+
+
+
         return null;
     }
 

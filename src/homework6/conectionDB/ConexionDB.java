@@ -10,6 +10,7 @@ public class ConexionDB {
     private static final String username = "sa";
     private static final String password = "";
 
+    // creamos el metodo para establecer la conexion con la BD
     public static Connection getConnectionDB(){
         Connection connection = null;
         try {
