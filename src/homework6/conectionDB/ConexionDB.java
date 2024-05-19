@@ -5,18 +5,15 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConexionDB {
-
-    private static final String url = "jdbc:h2:~/tar";
-    private static final String username = "sa";
+    private static final String jdcUrl = "jdbc:h2:~/personas";
+    private static final String username = "sas";
     private static final String password = "";
-
-    // creamos el metodo para establecer la conexion con la BD
-    public static Connection getConnectionDB(){
+    public static Connection getConnection(){
         Connection connection = null;
-        try {
-            connection = DriverManager.getConnection(url,username,password);
-        }  catch (SQLException e) {
-            e.printStackTrace();
+        try{
+            connection = DriverManager.getConnection(jdcUrl, username, password);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
         return connection;
     }
