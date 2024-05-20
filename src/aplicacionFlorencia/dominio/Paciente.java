@@ -4,11 +4,20 @@ public class Paciente {
    private int id;
    private String name;
    private int age;
+   private String patology;
 
-    public Paciente(int id, String name, int age) {
+    public Paciente(int id, String name, int age, String patology) {
         this.id = id;
         this.name = name;
         this.age = age;
+        this.patology = patology;
+    }
+    public String getPatology() {
+        return patology;
+    }
+
+    public void setPatology(String patology) {
+        this.patology = patology;
     }
 
     public int getId() {
@@ -38,9 +47,10 @@ public class Paciente {
     @Override
     public String toString() {
         return "Paciente {" +
-                "id = " + id +
-                ", name = '" + name + '\'' +
-                ", age = " + age +
+                "id= " + id +
+                ", name= '" + name + '\'' +
+                ", age= " + age +
+                ", patology= '" + patology + '\'' +
                 '}';
     }
 }
