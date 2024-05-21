@@ -23,8 +23,15 @@ class OperacionesTest {
 @Test
 @DisplayName("Metodo para verificar condicion de par")
     void codicionPar(){
-    int entrada = 11;
+    int entrada = 1133;
     boolean result = Operaciones.esPar(entrada);
     assertFalse(result);
+}
+@Test
+@DisplayName("Contador de characteres")
+void countCharactersTest(){
+    String cadenaInput = "hola como estas";
+    int result = Operaciones.countCharacters(cadenaInput);
+    assertEquals(15, result);
 }
 }

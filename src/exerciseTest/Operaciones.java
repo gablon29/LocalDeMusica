@@ -9,4 +9,9 @@ public class Operaciones {
        if (a % 2 == 0) return true;
        return false;
     }
+
+    public static int countCharacters(String cadena){
+        return cadena.length();
+    }
+
 }
