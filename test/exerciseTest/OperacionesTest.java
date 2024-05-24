@@ -1,5 +1,6 @@
 package exerciseTest;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -33,5 +34,13 @@ void countCharactersTest(){
     String cadenaInput = "hola como estas";
     int result = Operaciones.countCharacters(cadenaInput);
     assertEquals(15, result);
+}
+@Test
+    @DisplayName("Metodo para revertir cadena")
+    void reverseStringTest(){
+    String input = "hola";
+    String result = Operaciones.revertirCadena(input);
+    String expected = "aloh";
+    Assertions.assertEquals(expected, result);
 }
 }
