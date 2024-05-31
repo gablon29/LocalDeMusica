@@ -9,12 +9,5 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-       char[] characters;
-       String palabra = "hola";
-       characters = palabra.toCharArray();
-        for (char c: characters
-             ) {
-            System.out.println(c);
-        }
     }
 }
