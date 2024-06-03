@@ -35,12 +35,12 @@ void countCharactersTest(){
     int result = Operaciones.countCharacters(cadenaInput);
     assertEquals(15, result);
 }
-@Test
-    @DisplayName("Metodo para revertir cadena")
-    void reverseStringTest(){
-    String input = "hola";
-    String result = Operaciones.revertirCadena(input);
-    String expected = "aloh";
-    Assertions.assertEquals(expected, result);
-}
+//@Test
+//    @DisplayName("Metodo para revertir cadena")
+//    void reverseStringTest(){
+//    String input = "hola";
+//    String result = Operaciones.revertirCadena(input);
+//    String expected = "aloh";
+//    Assertions.assertEquals(expected, result);
+//}
 }

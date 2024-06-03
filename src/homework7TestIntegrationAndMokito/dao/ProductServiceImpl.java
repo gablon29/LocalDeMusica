@@ -1,19 +1,20 @@
 package homework7TestIntegrationAndMokito.dao;
 
-import homework7TestIntegrationAndMokito.conecctionDB.ConnectionDB;
 import homework7TestIntegrationAndMokito.domain.Product;
 import homework7TestIntegrationAndMokito.domain.ShoppingCart;
 
 
 public class ProductServiceImpl implements ProductService{
 
-    ShoppingCart shoppingCart = new ShoppingCart();
+    ShoppingCart shoppingCart;
 
     public ProductServiceImpl(ShoppingCart shoppingCart) {
-        shoppingCart = this.shoppingCart;
+        this.shoppingCart = shoppingCart;
     }
     @Override
     public void addProductToCart(Product product, int quantity) {
-
+        for (int i = 0; i < quantity; i++) {
+            shoppingCart.addProduct(product);
+        }
     }
 }
