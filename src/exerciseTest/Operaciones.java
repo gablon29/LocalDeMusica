@@ -1,5 +1,8 @@
 package exerciseTest;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Operaciones {
 
     public static int areaRectangulo(int a, int b){
@@ -14,4 +17,11 @@ public class Operaciones {
         return cadena.length();
     }
 
+//    public static String revertirCadena(String cadena){
+//        List<Character> characters = new ArrayList<>();
+//        for (Character character: cadena
+//             ) {
+//
+//        }
+//        }
 }
