@@ -19,4 +19,6 @@ public class Amigable implements Saludar, Abrazo, Golpe {
         return a * b;
     }
 
+    public String rebajar(String a) { return "A mi no me mires gil " + a;}
+
 }
